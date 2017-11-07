@@ -183,24 +183,30 @@
 
       $('#submit').on('click', function(event) {
         event.preventDefault();
+        // var newFriend = {
+        //   name: $('#name').val().trim(),
+        //   photo: $('#photo').val().trim(),
+        //   scores: [
+        //     parseInt($('#1').val()),
+        //     parseInt($('#2').val()),
+        //     parseInt($('#3').val()),
+        //     parseInt($('#4').val()),
+        //     parseInt($('#5').val()),
+        //     parseInt($('#6').val()),
+        //     parseInt($('#7').val()),
+        //     parseInt($('#8').val()),
+        //     parseInt($('#9').val()),
+        //     parseInt($('#10').val())
+        //   ]
+        // };
+
         var newFriend = {
-          name: $('#name').val().trim(),
-          photo: $('#photo').val().trim(),
-          scores: [
-            parseInt($('#1').val()),
-            parseInt($('#2').val()),
-            parseInt($('#3').val()),
-            parseInt($('#4').val()),
-            parseInt($('#5').val()),
-            parseInt($('#6').val()),
-            parseInt($('#7').val()),
-            parseInt($('#8').val()),
-            parseInt($('#9').val()),
-            parseInt($('#10').val())
-          ]
+          name: "Lazy Sue",
+          photo: "",
+          scores: [3, 4, 2, 5, 5, 2, 3, 3, 5, 1]
         };
         console.log(newFriend);
-        
+
         $.post('/api/friends', newFriend)
           .done(function(data) {
             console.log(data);

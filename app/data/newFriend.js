@@ -6,10 +6,10 @@ const NewFriend = function(req) {
   this.total = 0;
   this.match = '';
 
-  for (let i = 0; i < friends.length; i++) {
+  for (var i = 0; i < friends.length; i++) {
     this.total = 0;
-    for (let j = 0; j < this.scores.length; j++) {
-      let diff = Math.abs(this.scores[j] - friends[i].scores[j]);
+    for (var j = 0; j < this.scores.length; j++) {
+      var diff = Math.abs(this.scores[j] - friends[i].scores[j]);
       this.total += diff;
     }
     if (this.total < this.bestMatch) {
