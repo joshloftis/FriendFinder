@@ -2,22 +2,22 @@ const friends = [
   {
     "name": "Anokhee",
     "photo": "",
-    "scores": [10, 4, 5, 8, 3, 8, 6, 10, 6, 5]
+    "scores": [1, 4, 5, 4, 3, 4, 3, 5, 1, 5]
   },
   {
     "name": "Josh",
     "photo": "",
-    "scores": [3, 4, 2, 10, 8, 7, 6, 9, 10, 1]
+    "scores": [3, 4, 2, 5, 3, 2, 3, 3, 5, 1]
   },
   {
     "name": "Sardine",
     "photo": "",
-    "scores": [2, 3, 6, 9, 6, 9, 1, 5, 10, 4]
+    "scores": [2, 3, 1, 4, 1, 3, 1, 5, 5, 4]
   },
   {
     "name": "Daisy",
     "photo": "",
-    "scores": [10, 2, 4, 7, 8, 5, 7, 6, 9, 10]
+    "scores": [5, 2, 4, 3, 2, 5, 3, 1, 4, 5]
   }
 ];
 module.exports = friends;
