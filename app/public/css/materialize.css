@@ -5632,7 +5632,7 @@ button.btn-floating {
   right: 0;
   background-color: #fafafa;
   padding: 0;
-  max-height: 70%;
+  min-height: 80%;
   width: 55%;
   margin: auto;
   overflow-y: auto;
@@ -7011,7 +7011,7 @@ select {
   height: 3rem;
   line-height: 3rem;
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0 0 20px 0;
   padding: 0;
   display: block;
@@ -7035,8 +7035,10 @@ select {
 
 .select-wrapper + label {
   position: absolute;
-  top: -26px;
+  top: -50px;
   font-size: 0.8rem;
+  color: black;
+  line-height: 20px;
 }
 
 select:disabled {

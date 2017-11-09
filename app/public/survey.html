@@ -13,11 +13,11 @@
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo">FriendFinder</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="/survey">Go to Home</a></li>
+          <li><a href="/home">Go to Home</a></li>
         </ul>
 
         <ul id="nav-mobile" class="side-nav">
-          <li><a href="/survey">Go to Home</a></li>
+          <li><a href="/home">Go to Home</a></li>
         </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
@@ -29,18 +29,18 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12 m6">
-              <input id="name" type="text" class="validate">
+              <input id="name" type="text" class="validate" required>
               <label for="name">Name</label>
             </div>
             <div class="input-field col s12 m6">
-              <input id="photo" type="text" class="validate">
+              <input id="photo" type="text" class="validate" required>
               <label for="photo">Photo</label>
             </div>
           </div><br><br><br>
 
           <div class="row">
             <div class="input-field col s12 m6">
-              <select id="1">
+              <select id="1" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -51,7 +51,7 @@
               <label>Your mind is always buzzing with unexplored ideas and plans.</label>
             </div>
             <div class="input-field col s12 m6">
-              <select id="2">
+              <select id="2" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -65,7 +65,7 @@
 
           <div class="row">
             <div class="input-field col s12 m6">
-              <select id="3">
+              <select id="3" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -76,7 +76,7 @@
               <label>You find it easy to stay relaxed and focused even when there is some pressure.</label>
             </div>
             <div class="input-field col s12 m6">
-              <select id="4">
+              <select id="4" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -90,7 +90,7 @@
 
           <div class="row">
             <div class="input-field col s12 m6">
-              <select id="5">
+              <select id="5" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -101,7 +101,7 @@
               <label>People can rarely upset you.</label>
             </div>
             <div class="input-field col s12 m6">
-              <select id="6">
+              <select id="6" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -115,7 +115,7 @@
 
           <div class="row">
             <div class="input-field col s12 m6">
-              <select id="7">
+              <select id="7" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -126,7 +126,7 @@
               <label>In a discussion, truth should be more important than people’s sensitivities.</label>
             </div>
             <div class="input-field col s12 m6">
-              <select id="8">
+              <select id="8" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -140,7 +140,7 @@
 
           <div class="row">
             <div class="input-field col s12 m6">
-              <select id="9">
+              <select id="9" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -151,7 +151,7 @@
               <label>You think that everyone’s views should be respected, supported by facts or not.</label>
             </div>
             <div class="input-field col s12 m6">
-              <select id="10">
+              <select id="10" required>
                 <option value="" disabled selected>Choose your option</option>
                 <option value="1">1 (Strongly disagree)</option>
                 <option value="2">2</option>
@@ -173,43 +173,79 @@
       <a class="black-text text-lighten-3" href="/api/friends">API Friends List</a> | <a class="black-text text-lighten-3" href="https://github.com/jshlfts32/FriendFinder">GitHub Repo</a>
       </div>
     </div><br><br><br><br><br><br><br><br><br><br>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+      <div id="modal-contents" class="modal-content">
+        <h3>Your Best Match</h3>
+        <hr>
+        <h3 id="name-match"></h3>
+        <img id="photo-match" src="" width="175">
+        <p>Your match's scores:<p>
+        <table>
+          <tr>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q3</th>
+            <th>Q4</th>
+            <th>Q5</th>
+            <th>Q6</th>
+            <th>Q7</th>
+            <th>Q8</th>
+            <th>Q9</th>
+            <th>10</th>
+          </tr>
+          <tr id="scores">
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <a href="" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      </div>
+    </div>
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
     <script>
     $(document).ready(function() {
       $('select').material_select();
+      $('.modal').modal();
 
       $('#submit').on('click', function(event) {
         event.preventDefault();
-        // var newFriend = {
-        //   name: $('#name').val().trim(),
-        //   photo: $('#photo').val().trim(),
-        //   scores: [
-        //     parseInt($('#1').val()),
-        //     parseInt($('#2').val()),
-        //     parseInt($('#3').val()),
-        //     parseInt($('#4').val()),
-        //     parseInt($('#5').val()),
-        //     parseInt($('#6').val()),
-        //     parseInt($('#7').val()),
-        //     parseInt($('#8').val()),
-        //     parseInt($('#9').val()),
-        //     parseInt($('#10').val())
-        //   ]
-        // };
-
         var newFriend = {
-          name: "Lazy Sue",
-          photo: "",
-          scores: [3, 4, 2, 5, 5, 2, 3, 3, 5, 1]
+          name: $('#name').val().trim(),
+          photo: $('#photo').val().trim(),
+          scores: [
+            parseInt($('#1').val()),
+            parseInt($('#2').val()),
+            parseInt($('#3').val()),
+            parseInt($('#4').val()),
+            parseInt($('#5').val()),
+            parseInt($('#6').val()),
+            parseInt($('#7').val()),
+            parseInt($('#8').val()),
+            parseInt($('#9').val()),
+            parseInt($('#10').val())
+          ]
         };
         console.log(newFriend);
 
         $.post('/api/friends', newFriend)
           .done(function(data) {
             console.log(data);
+            $('#name-match').html(data.name);
+            $('#photo-match').attr("src", data.photo);
+            var scores = data.scores;
+            for (let i of scores) {
+              $('#scores').append(`<td>${i}</td>`);
+            }
+
+            $('#modal1').modal('open');
+            $('.modal-close').on('click', function(){
+              location.reload();
+            });
         });
       });
     });
